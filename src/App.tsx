@@ -2,13 +2,13 @@ import { useState } from "react";
 // import Message from "./Message";
 
 function App() {
-  const [drink, setDrink] = useState ({
-    title: "Americano",
-    price: 5,
-  });
+  const [bugs, setBugs] = useState ([
+    {id: 1, title: 'bug 1', fixed: false},
+    {id: 2, title: 'bug 2', fixed: false},
+  ]);
 
   const handleClick = () => {
-    setDrink({...drink, price:6})
+    setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true} : bug))
   }
   return (
     <div>
