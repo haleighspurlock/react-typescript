@@ -2,17 +2,15 @@ import { useState } from "react";
 // import Message from "./Message";
 
 function App() {
-  const [game, setGame] = useState ({
-    id: 1,
-    player: {
-      name: 'Oliver',
-    }
+  const [pizza, setPizza] = useState ({
+    name: 'Spicy Pepperoni',
+    toppings: ['Mushrooms']
   })
 
   const handleClick = () => {
-    setGame({...game, player: {...game.player, name: 'Twohy'} })
+    setPizza({...pizza, toppings: [...pizza.toppings, 'Cheese'] })
   }
-  
+
   return (
     <div>
       <button onClick={handleClick}>Click Me</button>
