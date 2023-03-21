@@ -3,11 +3,11 @@ import React, { FormEvent, useState } from "react";
 const Form = () => {
   const [person, setPerson] = useState({
     name: "",
-    age: 0,
+    age: "",
   });
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(person)
+    console.log(person);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -16,7 +16,9 @@ const Form = () => {
           Name
         </label>
         <input
-          onChange={(e) => setPerson({ ...person, name: e.target.value })}
+          onChange={(e) => setPerson({ ...person, name: e.target.value })
+        }
+          value={person.name}
           id="name"
           type="text"
           className="form-control"
@@ -27,7 +29,15 @@ const Form = () => {
           <label htmlFor="age" className="form-label">
             Age
           </label>
-          <input onChange={(e) => setPerson({...person, age: parseInt(e.target.value)})}id="age" type="number" className="form-control" />
+          <input
+            onChange={(e) =>
+              setPerson({ ...person, age: parseInt(e.target.value) })
+            }
+            value={person.age}
+            id="age"
+            type="number"
+            className="form-control"
+          />
         </div>
       </div>
       <button className="btn btn-primary" type="submit">
