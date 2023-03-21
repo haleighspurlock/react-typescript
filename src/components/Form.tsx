@@ -1,12 +1,12 @@
-import React from "react";
+import React, { FormEvent } from "react";
 
 const Form = () => {
-  return (
-    <form onSubmit={(e) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         console.log('submitted')
-
-    }}>
+    }
+  return (
+    <form onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
